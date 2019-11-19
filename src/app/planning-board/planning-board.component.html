@@ -1,0 +1,70 @@
+<div class="container pt-5">
+  <div class="form-group">
+    <input
+      class="form-control mb-3"
+      type="text"
+      [(ngModel)]="user.firstName"
+      name="firstName"
+      #firstName
+      placeholder="First Name"
+    />
+    <input
+      class="form-control mb-3"
+      type="text"
+      [(ngModel)]="user.lastName"
+      name="lastName"
+      #lastName
+      placeholder="Last Name"
+    />
+    <button type="button" class="btn btn-primary" (click)="onSubmit()">
+      Submit
+    </button>
+    <button type="button" class="ml-3 btn btn-success" (click)="onToggleScores()">
+      Show Scores
+    </button>
+    <div class="row mt-3">
+        <div class="col-2">
+            <div class="card" (click)="user.score = 1" [ngClass]="{selected: user.score === 1}">
+                <div class="card-body">1</div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card" (click)="user.score = 2" [ngClass]="{selected: user.score === 2}">
+                <div class="card-body">2</div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card" (click)="user.score = 3" [ngClass]="{selected: user.score === 3}">
+                <div class="card-body">3</div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card" (click)="user.score = 5" [ngClass]="{selected: user.score === 5}">
+                <div class="card-body">5</div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card" (click)="user.score = 8" [ngClass]="{selected: user.score === 8}">
+                <div class="card-body">8</div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="card" (click)="user.score = 13" [ngClass]="{selected: user.score === 13}">
+                <div class="card-body">13</div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <h3>Logged in Users:</h3>
+      <ul>
+        <li *ngFor="let loggedInUser of users">
+          {{ loggedInUser.firstName + ' ' + loggedInUser.lastName }}
+          <span *ngIf="showScores">{{ loggedInUser.score }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

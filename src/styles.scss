@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap';
+
+html,
+body {
+  // background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f4f3ef;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  color: #252422;
+  margin-bottom: 20px;
+  position: relative;
+  border: 0;
+}
